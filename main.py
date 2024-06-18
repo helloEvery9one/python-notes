@@ -20,7 +20,7 @@
 # bin - binary
 
 
-#--------------------------DEVELOPER TIPS:-----------------------------
+# --------------------------DEVELOPER TIPS:-----------------------------
 # 1. don't read the python dictionary, as it is not needed to remember everything.
 
 # 2. make descriptive variables. your code should read like English.

@@ -1,4 +1,4 @@
-from functools import reduce
+# from functools import reduce
 
 # exercise 1: age guesser
 # birth_year = input('what year were you born? ')
@@ -63,9 +63,9 @@ def check_driver_age(age=0):
 # -----------exercise 7: highest even number in a list--------------
 
 
-def highest_even(li):
+def highest_even(my_li):
     evens = []
-    for items in li:
+    for items in my_li:
         if items % 2 == 0:
             evens.append(items)
             evens.sort()
@@ -134,6 +134,7 @@ def highest_even(li):
 
 
 class SuperList(list):
+    '''hallo hallo hallo'''
 
     def __len__(self):
         return 1000
@@ -146,40 +147,53 @@ class SuperList(list):
 
 # ---------------exercise 11: map, filter, zip, reduce---------------
 # 1 Capitalize all of the pet names and print the list
-my_pets = ['sisi', 'bibi', 'titi', 'carla']
+# my_pets = ['sisi', 'bibi', 'titi', 'carla']
 
 
-def capitalize():
-    li = []
-    for items in my_pets:
-        li.append(items.capitalize())
+# def capitalize():
+    # lis = []
+#     for items in my_pets:
+#         li.append(items.capitalize())
 
-    return li
-
-
-print(capitalize())
+#     return li
 
 
-# 2 Zip the 2 lists into a list of tuples, but sort the numbers from lowest to highest.
-my_strings = ['a', 'b', 'c', 'd', 'e']
-my_numbers = [5, 4, 3, 2, 1]
-my_numbers.sort()
-print(list(zip(my_strings, my_numbers)))
-
-# 3 Filter the scores that pass over 50%
-scores = [73, 20, 65, 19, 76, 100, 88]
+# print(capitalize())
 
 
-def filter_scores(scores):
-    return scores < 50
+# # 2 Zip the 2 lists into a list of tuples, but sort the numbers from lowest to highest.
+# my_strings = ['a', 'b', 'c', 'd', 'e']
+# my_numbers = [5, 4, 3, 2, 1]
+# my_numbers.sort()
+# print(list(zip(my_strings, my_numbers)))
+
+# # 3 Filter the scores that pass over 50%
+# scores = [73, 20, 65, 19, 76, 100, 88]
 
 
-print(list(filter(filter_scores, scores)))
+# def filter_scores(scores):
+#     return scores < 50
 
 
-# 4 Combine all of the numbers that are in a list on this file using reduce (my_numbers and scores). What is the total?
-def accumulator(acc, item):
-    return acc + item
+# print(list(filter(filter_scores, scores)))
 
 
-print(reduce(accumulator, (my_numbers + scores)))
+# # 4 Combine all of numbers that are in a list on this file using reduce (my_numbers and scores)
+# def accumulator(acc, item):
+#     return acc + item
+
+
+# print(reduce(accumulator, (my_numbers + scores)))
+
+# -----------------------------exercise 12: lambda expressions----------------------------------
+my_list = [5, 4, 3]
+print(list(map(lambda item: item ** 2, my_list)))
+
+a = [(0, 2), (4, 3), (9, 9), (10, -1)]
+a.sort(key=lambda x: x[1])
+print(a)
+
+#------------------------------exercise 13: comprehensions--------------------------------------
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+duplicates = list({items for items in some_list if some_list.count(items) > 1})
+print(duplicates)

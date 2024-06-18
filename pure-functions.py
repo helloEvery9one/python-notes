@@ -14,7 +14,7 @@ from functools import reduce
 
 # print(multiply_by2([1,2,3]))
 
-#------------------------useful functions----------------------------
+# ------------------------useful functions----------------------------
 # map, filter, zip, reduce
 # MAP
 my_list = [1, 2, 3]
@@ -22,7 +22,7 @@ your_list = [10, 20, 30]
 
 
 def multiply_by2(item):
-  return item * 2
+    return item * 2
 
 
 print(list(map(multiply_by2, my_list)))
@@ -33,7 +33,7 @@ print(my_list)
 
 # FILTER
 def only_odd(item):
-  return item % 2 != 0
+    return item % 2 != 0
 
 
 print(list(filter(only_odd, my_list)))
@@ -54,7 +54,8 @@ print(list(zip(my_list, your_list)))
 # REDUCE
 # reduce actually needs a module to be imported (you can see at the top)
 def accumulator(acc, item):
-  print(acc, item)
-  return acc + item
-  
+    print(acc, item)
+    return acc + item
+
+
 print(reduce(accumulator, my_list, 0))
