@@ -193,7 +193,34 @@ a = [(0, 2), (4, 3), (9, 9), (10, -1)]
 a.sort(key=lambda x: x[1])
 print(a)
 
-#------------------------------exercise 13: comprehensions--------------------------------------
+# ------------------------------exercise 13: comprehensions--------------------------------------
 some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
 duplicates = list({items for items in some_list if some_list.count(items) > 1})
 print(duplicates)
+
+# ---------------------------------exercise 14: decorators---------------------------------------
+# Create an @authenticated decorator that only allows the function to run is user1 has 'valid' set to True:
+user1 = {
+    'name': 'Sorna',
+    # changing this will either run or not run the message_friends function.
+    'valid': True
+}
+
+
+def authenticated(fn):
+    '''asdf'''
+    def wrapper(*args, **kwargs):
+        if args[0]['valid']:
+            fn(*args, **kwargs)
+        else:
+            print('invalid user')
+    return wrapper
+
+
+@authenticated
+def message_friends(user):
+    '''asdf'''
+    print('message has been sent')
+
+
+message_friends(user1)
