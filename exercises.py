@@ -186,41 +186,58 @@ class SuperList(list):
 # print(reduce(accumulator, (my_numbers + scores)))
 
 # -----------------------------exercise 12: lambda expressions----------------------------------
-my_list = [5, 4, 3]
-print(list(map(lambda item: item ** 2, my_list)))
+# my_list = [5, 4, 3]
+# print(list(map(lambda item: item ** 2, my_list)))
 
-a = [(0, 2), (4, 3), (9, 9), (10, -1)]
-a.sort(key=lambda x: x[1])
-print(a)
+# a = [(0, 2), (4, 3), (9, 9), (10, -1)]
+# a.sort(key=lambda x: x[1])
+# print(a)
 
-# ------------------------------exercise 13: comprehensions--------------------------------------
-some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
-duplicates = list({items for items in some_list if some_list.count(items) > 1})
-print(duplicates)
+# # ------------------------------exercise 13: comprehensions--------------------------------------
+# some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+# duplicates = list({items for items in some_list if some_list.count(items) > 1})
+# print(duplicates)
 
-# ---------------------------------exercise 14: decorators---------------------------------------
-# Create an @authenticated decorator that only allows the function to run is user1 has 'valid' set to True:
-user1 = {
-    'name': 'Sorna',
-    # changing this will either run or not run the message_friends function.
-    'valid': True
-}
-
-
-def authenticated(fn):
-    '''asdf'''
-    def wrapper(*args, **kwargs):
-        if args[0]['valid']:
-            fn(*args, **kwargs)
-        else:
-            print('invalid user')
-    return wrapper
+# # ---------------------------------exercise 14: decorators---------------------------------------
+# # Create an @authenticated decorator that only allows the function to run is user1 has 'valid' set to True:
+# user1 = {
+#     'name': 'Sorna',
+#     # changing this will either run or not run the message_friends function.
+#     'valid': True
+# }
 
 
-@authenticated
-def message_friends(user):
-    '''asdf'''
-    print('message has been sent')
+# def authenticated(fn):
+#     '''asdf'''
+#     def wrapper(*args, **kwargs):
+#         if args[0]['valid']:
+#             fn(*args, **kwargs)
+#         else:
+#             print('invalid user')
+#     return wrapper
 
 
-message_friends(user1)
+# @authenticated
+# def message_friends(user):
+#     '''asdf'''
+#     print('message has been sent')
+
+
+# message_friends(user1)
+
+# ----------------------------exercise 15: fibonacci numbers--------------------------------
+
+
+def fib(num):
+    '''fibonacci number test demo nigga'''
+    f0 = 0
+    f1 = 1
+    for i in range(num):
+        yield f0
+        temp = f0
+        f0 = f1
+        f1 = temp + f1
+
+
+for x in fib(21):
+    print(x)
