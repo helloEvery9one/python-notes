@@ -228,16 +228,16 @@ class SuperList(list):
 # ----------------------------exercise 15: fibonacci numbers--------------------------------
 
 
-def fib(num):
-    '''fibonacci number test demo nigga'''
-    f0 = 0
-    f1 = 1
-    for i in range(num):
-        yield f0
-        temp = f0
-        f0 = f1
-        f1 = temp + f1
+# def fib(num):
+#     '''fibonacci number test demo nigga'''
+#     f0 = 0
+#     f1 = 1
+#     for _ in range(num):
+#         yield f0
+#         temp = f0
+#         f0 = f1
+#         f1 = temp + f1
 
 
-for x in fib(21):
-    print(x)
+# for x in fib(21):
+#     print(x)
